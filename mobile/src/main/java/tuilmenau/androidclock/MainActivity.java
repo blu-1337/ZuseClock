@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         System.out.println("Hello world!");
         System.out.println("Hello world! Another one!");
-        System.out.println("Hello world, are you reeaady?");
+        System.out.println("Hello world, are you reeaady?!");
     }
 }
 
