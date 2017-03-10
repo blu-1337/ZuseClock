@@ -9,18 +9,6 @@ protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         System.out.println("Hello world!");
-        System.out.println("Hello world! Another one!");
-
-
-
-        System.out.println("Hello world! Are you ready to code?!");
-
-
-        System.out.println("Hello world! Are you ready tgio code?!");
-        System.out.println("Commit");
-
-
-        //"Hello world"s removed
     }
     protected void CalculateTime(int hour1, int hour2, int minute1, int minute2){
         int matrix[][] = {};
@@ -35,7 +23,7 @@ protected void onCreate(Bundle savedInstanceState) {
             hour1 /= 2;
 
             matrix[0][0] = hour1 % 2;
-            hour1 /= 2;
+
         ////
 
             matrix[3][1] = hour1 % 2;
@@ -48,7 +36,7 @@ protected void onCreate(Bundle savedInstanceState) {
             hour2 /= 2;
 
             matrix[0][1] = hour1 % 2;
-            hour2 /= 2;
+
 
         //
             matrix[3][2] = hour1 % 2;
@@ -73,7 +61,6 @@ protected void onCreate(Bundle savedInstanceState) {
             minute2 /= 2;
 
             matrix[0][3] = hour1 % 2;
-            minute2 /= 2;
 
     }
 
