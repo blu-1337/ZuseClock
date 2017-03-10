@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("Hello world!");
         System.out.println("Hello world! Another one!");
         System.out.println("Hello develop!");
+        System.out.println("Hello commit!");
     }
 }
 
