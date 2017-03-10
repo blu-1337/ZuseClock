@@ -11,15 +11,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         System.out.println("Hello world!");
         System.out.println("Hello world! Another one!");
-<<<<<<< HEAD
+
 
 
         System.out.println("Hello world! Are you ready to code?!");
 
-=======
+=
         System.out.println("Hello world! Are you ready tgio code?!");
         System.out.println("Commit");
->>>>>>> master
+
     }
     protected void CalculateTime(int hour1, int hour2, int minute1, int minute2){
         int matrix[][] = {};
