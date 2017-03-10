@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     }
     protected void CalculateTime(int hour1, int hour2, int minute1, int minute2){
         int matrix[][] = {};
-        while(hour1 != 0){
+
             matrix[3][0] = hour1 % 2;
             hour1 /= 2;
 
@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
             matrix[0][0] = hour1 % 2;
             hour1 /= 2;
-        }
-        while(hour2 != 0){
+        //
+
             matrix[3][1] = hour1 % 2;
             hour2 /= 2;
 
@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
 
             matrix[0][1] = hour1 % 2;
             hour2 /= 2;
-        }
-        while(minute1 != 0){
+
+        //
             matrix[3][2] = hour1 % 2;
             minute1 /= 2;
 
@@ -53,8 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
             matrix[0][2] = hour1 % 2;
             minute1 /= 2;
-        }
-        while(minute2 != 0){
+        //
             matrix[3][3] = hour1 % 2;
             minute2 /= 2;
 
@@ -66,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
             matrix[0][3] = hour1 % 2;
             minute2 /= 2;
-        }
+
     }
 
 }
