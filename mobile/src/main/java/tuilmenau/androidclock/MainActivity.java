@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("Hello world! Are you ready tgio code?!");
         System.out.println("Commit");
 
-=======betyyyyyyyyyyyy
+=======betyyyyyyyyyyyydddddddddddddddddddddddfafaaffafa
         //"Hello world"s removed
 >>>>>>> 9af3dec6fbe00a7f95stb207494927abbf401c7323
     }
