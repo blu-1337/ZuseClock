@@ -9,6 +9,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+<<<<<<< HEAD
         System.out.println("Hello world!");
         System.out.println("Hello world! Another one!");
 
@@ -20,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("Hello world! Are you ready tgio code?!");
         System.out.println("Commit");
 
+=======
+        //"Hello world"s removed
+>>>>>>> 9af3dec6fbe00a7f95b207494927abbf401c7323
     }
     protected void CalculateTime(int hour1, int hour2, int minute1, int minute2){
         int matrix[][] = {};
