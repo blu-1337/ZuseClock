@@ -5,11 +5,9 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-<<<<<<< HEAD
         System.out.println("Hello world!");
         System.out.println("Hello world! Another one!");
 
@@ -17,13 +15,12 @@ public class MainActivity extends AppCompatActivity {
 
         System.out.println("Hello world! Are you ready to code?!");
 
-=
+
         System.out.println("Hello world! Are you ready tgio code?!");
         System.out.println("Commit");
 
-=======betyyyyyyyyyyyydddddddddddddddddddddddfafaaffafa
+
         //"Hello world"s removed
->>>>>>> 9af3dec6fbe00a7f95stb207494927abbf401c7323
     }
     protected void CalculateTime(int hour1, int hour2, int minute1, int minute2){
         int matrix[][] = {};
