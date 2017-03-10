@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/AndroidClock.iml" filepath="$PROJECT_DIR$/AndroidClock.iml" />
+=======
+>>>>>>> 9a46e7b5030d1e9faaf630ba3b1c07c650d6c2b7
       <module fileurl="file://$PROJECT_DIR$/ZuseClock.iml" filepath="$PROJECT_DIR$/ZuseClock.iml" />
       <module fileurl="file://$PROJECT_DIR$/mobile/mobile.iml" filepath="$PROJECT_DIR$/mobile/mobile.iml" />
       <module fileurl="file://$PROJECT_DIR$/wear/wear.iml" filepath="$PROJECT_DIR$/wear/wear.iml" />
