@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
             matrix[0][0] = hour1 % 2;
             hour1 /= 2;
-        //
+        ////
 
             matrix[3][1] = hour1 % 2;
             hour2 /= 2;
