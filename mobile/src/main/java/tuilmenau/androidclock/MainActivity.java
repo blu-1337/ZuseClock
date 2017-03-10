@@ -62,7 +62,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
             matrix[0][2] = hour1 % 2;
             minute1 /= 2;
-        //
+        //////////////////////////////////////////////
             matrix[3][3] = hour1 % 2;
             minute2 /= 2;
 
