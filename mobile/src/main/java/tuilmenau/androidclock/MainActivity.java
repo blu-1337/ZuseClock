@@ -3,77 +3,121 @@ package tuilmenau.androidclock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.view.View;
+
+import java.sql.Time;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 
 public class MainActivity extends AppCompatActivity {
 
 
-@Override
-protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-    hour00.setVisibility(View.VISIBLE);
-    ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
-    hour10.setVisibility(View.VISIBLE);
+        //example: make imageview (in)visible
+        ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+        hour00.setVisibility(View.VISIBLE);
+        ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
+        hour10.setVisibility(View.VISIBLE);
 
-        /*CalculateTime(2,0,5,3);*/
+        //test: read system time (hour + minutes)
+        Calendar calendar = Calendar.getInstance();
+        int current_hour = calendar.get(Calendar.HOUR);
+
+        TextView current_time = (TextView) findViewById(R.id.textView1);
+        current_time.setText(hour1(current_hour) + " " + hour2(current_hour));
+
     }
-    /*protected void CalculateTime(int hour1, int hour2, int minute1, int minute2){
+
+    public int hour1(int current_hour) {
+        return (int) ((current_hour / Math.pow(10, 1)) % 10);
+    }
+
+    public int hour2(int current_hour) {
+        return (int) ((current_hour / Math.pow(10, 2)) % 10);
+    }
+
+
+        /*CalculateTime(2, 0, 5, 3);
+
+        new Timer().scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                Log.i("tag", "A kiss every 5 seconds");
+                this.hour10.setVisibility(View.VISIBLE);
+
+            }
+        }, 0, 5000);
+
+        new Timer2().scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                Log.i("tag", "A kiss every 5 seconds");
+                this.hour10.setVisibility(View.INVISIBLE);
+
+            }
+        }, 0, 2500);
+    }
+
+    protected void CalculateTime(int hour1, int hour2, int minute1, int minute2) {
         int matrix[][] = {};
 
         //first column
-            matrix[3][0] = hour1 % 2;
-            hour1 /= 2;
+        matrix[3][0] = hour1 % 2;
+        hour1 /= 2;
 
-            matrix[2][0] = hour1 % 2;
-            hour1 /= 2;
+        matrix[2][0] = hour1 % 2;
+        hour1 /= 2;
 
-            matrix[1][0] = hour1 % 2;
-            hour1 /= 2;
+        matrix[1][0] = hour1 % 2;
+        hour1 /= 2;
 
-            matrix[0][0] = hour1 % 2;
+        matrix[0][0] = hour1 % 2;
 
 
         //second column
-            matrix[3][1] = hour1 % 2;
-            hour2 /= 2;
+        matrix[3][1] = hour2 % 2;
+        hour2 /= 2;
 
-            matrix[2][1] = hour1 % 2;
-            hour2 /= 2;
+        matrix[2][1] = hour2 % 2;
+        hour2 /= 2;
 
-            matrix[1][1] = hour1 % 2;
-            hour2 /= 2;
+        matrix[1][1] = hour2 % 2;
+        hour2 /= 2;
 
-            matrix[0][1] = hour1 % 2;
+        matrix[0][1] = hour2 % 2;
 
         //third column
-            matrix[3][2] = hour1 % 2;
-            minute1 /= 2;
+        matrix[3][2] = minute1 % 2;
+        minute1 /= 2;
 
-            matrix[2][2] = hour1 % 2;
-            minute1 /= 2;
+        matrix[2][2] = minute1 % 2;
+        minute1 /= 2;
 
-            matrix[1][2] = hour1 % 2;
-            minute1 /= 2;
+        matrix[1][2] = minute1 % 2;
+        minute1 /= 2;
 
-            matrix[0][2] = hour1 % 2;
+        matrix[0][2] = minute1 % 2;
 
         //fourth column
-            matrix[3][3] = hour1 % 2;
-            minute2 /= 2;
+        matrix[3][3] = minute2 % 2;
+        minute2 /= 2;
 
-            matrix[2][3] = hour1 % 2;
-            minute2 /= 2;
+        matrix[2][3] = minute2 % 2;
+        minute2 /= 2;
 
-            matrix[1][3] = hour1 % 2;
-            minute2 /= 2;
+        matrix[1][3] = minute2 % 2;
+        minute2 /= 2;
 
-            matrix[0][3] = hour1 % 2;
+        matrix[0][3] = minute2 % 2;*/
 
-    }*/
 
 }
 

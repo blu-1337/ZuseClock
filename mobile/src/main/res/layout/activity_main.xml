@@ -57,4 +57,13 @@
         android:id="@+id/guideline5"
         app:layout_constraintGuide_begin="71dp"
         android:orientation="vertical" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="249dp"
+        android:layout_height="40dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="117dp"
+        android:textSize="15pt"/>
 </android.support.constraint.ConstraintLayout>
