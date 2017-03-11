@@ -73,10 +73,6 @@ protected void onCreate(Bundle savedInstanceState) {
 
             matrix[0][3] = hour1 % 2;
 
-        ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-                hour00.setVisibility(1);
-        ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
-                hour10.setVisibility(0);
     }*/
 
 }
