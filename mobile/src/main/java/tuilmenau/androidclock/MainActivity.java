@@ -3,6 +3,8 @@ package tuilmenau.androidclock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.view.View;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,9 +13,15 @@ public class MainActivity extends AppCompatActivity {
 protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        CalculateTime(2,0,5,3);
+
+    ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+    hour00.setVisibility(View.VISIBLE);
+    ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
+    hour10.setVisibility(View.INVISIBLE);
+
+        /*CalculateTime(2,0,5,3);*/
     }
-    protected void CalculateTime(int hour1, int hour2, int minute1, int minute2){
+    /*protected void CalculateTime(int hour1, int hour2, int minute1, int minute2){
         int matrix[][] = {};
 
         //first column
@@ -69,7 +77,7 @@ protected void onCreate(Bundle savedInstanceState) {
                 hour00.setVisibility(1);
         ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
                 hour10.setVisibility(0);
-    }
+    }*/
 
 }
 
