@@ -17,7 +17,7 @@ protected void onCreate(Bundle savedInstanceState) {
     ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
     hour00.setVisibility(View.VISIBLE);
     ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
-    hour10.setVisibility(View.INVISIBLE);
+    hour10.setVisibility(View.VISIBLE);
 
         /*CalculateTime(2,0,5,3);*/
     }
