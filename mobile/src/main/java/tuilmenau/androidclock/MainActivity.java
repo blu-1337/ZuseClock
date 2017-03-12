@@ -3,6 +3,7 @@ package tuilmenau.androidclock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.view.View;
 
@@ -13,6 +14,39 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    private static final String TAG = "Main Activity TAG: ";
+
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    //Timer Function
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    int secondsPassed = 0;
+    int i = 0;
+
+    Timer myTimer = new Timer();
+    TimerTask task = new TimerTask(){
+        public void run(){
+            secondsPassed++;
+            setContentView(R.layout.activity_main);
+            Log.i(TAG, "Seconds passed: " + secondsPassed);
+            ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+            if (i % 2 == 0)
+                hour00.setVisibility(View.VISIBLE);
+            else
+                hour00.setVisibility(View.INVISIBLE);
+            i++;
+        }
+    };
+
+    public void start(){
+        Log.i(TAG, "PLEASE SAVE US FROM THIS PROGRAMMING NIGHTMARE!");
+        myTimer.scheduleAtFixedRate(task, 1000, 1000);
+    }
+
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+    Button b1, b2, b3;
 
     public void convertTime(int hour1, int hour2, int minute1, int minute2) {
 
@@ -89,6 +123,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
+        MainActivity test = new MainActivity();
+        test.start();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -101,29 +137,35 @@ public class MainActivity extends AppCompatActivity {
 
         convertTime(2, 0, 5, 3);
 
-        //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-        //Here i tried to make a timer
-        //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+        b1 = (Button) findViewById(R.id.btn1);
+        b2 = (Button) findViewById(R.id.btn2);
+        b3 = (Button) findViewById(R.id.btn3);
 
-        Timer timer = new Timer();
 
-        timer.schedule(new TimerTask(){
-            public int i = 0;
-            public ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
-
-            public void run(){
-                if (i % 2 == 0){
-                    setContentView(R.layout.activity_main);
-                    ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
-                    hour10.setVisibility(View.VISIBLE);
-                } else {
-
-                    ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
-                    hour10.setVisibility(View.GONE);
-                }
-                this.i++;
-            }
-        }, 0,2000);
+//
+//        //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//        //Here i tried to make a timer
+//        //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//
+//        Timer timer = new Timer();
+//
+//        timer.schedule(new TimerTask(){
+//            public int i = 0;
+//            public ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
+//
+//            public void run(){
+//                if (i % 2 == 0){
+//                    setContentView(R.layout.activity_main);
+//                    ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
+//                    hour10.setVisibility(View.VISIBLE);
+//                } else {
+//
+//                    ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
+//                    hour10.setVisibility(View.GONE);
+//                }
+//                this.i++;
+//            }
+//        }, 0,2000);
 
 
 //        Timer timer2 = new Timer();
@@ -133,8 +175,6 @@ public class MainActivity extends AppCompatActivity {
 //                hour10.setVisibility(View.INVISIBLE);
 //            }
 //        }, 0,1000);
-
-    }
 
 
 //        new Timer().scheduleAtFixedRate(new TimerTask() {
@@ -146,6 +186,27 @@ public class MainActivity extends AppCompatActivity {
 //
 //        }
 //    },0,2500);
+
+    }
+
+    public void b1Clicked(View v){
+        b1.setVisibility(View.INVISIBLE);
+        b2.setVisibility(View.VISIBLE);
+        b3.setVisibility(View.VISIBLE);
+    }
+    public void b2Clicked(View v){
+        b2.setVisibility(View.INVISIBLE);
+        b1.setVisibility(View.VISIBLE);
+        b3.setVisibility(View.VISIBLE);
+    }
+    public void b3Clicked(View v){
+        b3.setVisibility(View.INVISIBLE);
+        b1.setVisibility(View.VISIBLE);
+        b2.setVisibility(View.VISIBLE);
+    }
+
+
+
 }
 
 
