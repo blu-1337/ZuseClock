@@ -18,6 +18,7 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
 
 
+    Button b1, b2, b3;
 
     private static final String TAG = "Main Activity TAG: ";
 
@@ -31,20 +32,49 @@ public class MainActivity extends AppCompatActivity {
     TimerTask task = new TimerTask(){
         public void run(){
             secondsPassed++;
-            setContentView(R.layout.activity_main);
+            //it goes wrong here ->>> setContentView(R.layout.activity_main);
             Log.i(TAG, "Seconds passed: " + secondsPassed);
-            ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-            if (i % 2 == 0)
-                hour00.setVisibility(View.VISIBLE);
-            else
-                hour00.setVisibility(View.INVISIBLE);
+//            ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+//            if (i % 2 == 0)
+//                hour00.setVisibility(View.VISIBLE);
+//            else
+//                hour00.setVisibility(View.INVISIBLE);
             i++;
         }
     };
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-    public void start(){
+        MainActivity test = new MainActivity();
+        test.start();
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+        hour00.setVisibility(View.VISIBLE);
+
+        ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
+        hour10.setVisibility(View.VISIBLE);
+
+        //######### test: read system time (hour + minutes)############
+        //Calendar calendar = calendar.getInstance();
+        int current_hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);//int current_hour = calendar.get(GregorianCalendar.HOUR_OF_DAY);
+        int current_minutes = Calendar.getInstance().get(Calendar.MINUTE);
+
+        TextView current_time = (TextView) findViewById(R.id.textView1);
+        current_time.setText(hour1(current_hour) + "     " + hour2(current_hour) + "                " + minute1(current_minutes) + "     " + minute2(current_minutes));
+
+        convertTime(2, 0, 5, 3);
+
+        b1 = (Button) findViewById(R.id.btn1);
+        b2 = (Button) findViewById(R.id.btn2);
+        b3 = (Button) findViewById(R.id.btn3);
+    }
+
+    public void start() {
         Log.i(TAG, "PLEASE SAVE US FROM THIS PROGRAMMING NIGHTMARE!");
         myTimer.scheduleAtFixedRate(task, 1000, 1000);
     }
@@ -54,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    Button b1, b2, b3;
 
     public void convertTime(int hour1, int hour2, int minute1, int minute2) {
 
@@ -126,34 +155,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
 
-        MainActivity test = new MainActivity();
-        test.start();
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-        hour00.setVisibility(View.VISIBLE);
-
-        ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
-        hour10.setVisibility(View.VISIBLE);
-
-        //######### test: read system time (hour + minutes)############
-        //Calendar calendar = calendar.getInstance();
-        int current_hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);//int current_hour = calendar.get(GregorianCalendar.HOUR_OF_DAY);
-        int current_minutes = Calendar.getInstance().get(Calendar.MINUTE);
-
-        TextView current_time = (TextView) findViewById(R.id.textView1);
-        current_time.setText(hour1(current_hour) + "     " + hour2(current_hour) + "                " + minute1(current_minutes) + "     " + minute2(current_minutes));
-
-        convertTime(2, 0, 5, 3);
-
-        b1 = (Button) findViewById(R.id.btn1);
-        b2 = (Button) findViewById(R.id.btn2);
-        b3 = (Button) findViewById(R.id.btn3);
 
 
 //
@@ -265,6 +267,7 @@ public class MainActivity extends AppCompatActivity {
         }
         int digit = array[0];
         return digit;
+}
 }
 
 
