@@ -28,21 +28,35 @@ public class MainActivity extends AppCompatActivity {
     int secondsPassed = 0;
     int i = 0;
 
+    public void isVisible() {
+        setContentView(R.layout.activity_main);
+        ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+        hour00.setVisibility(View.VISIBLE);
+    }
+    public void isInvisible(){
+        setContentView(R.layout.activity_main);
+        ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+        hour00.setVisibility(View.INVISIBLE);
+    }
+
     Timer myTimer = new Timer();
     TimerTask task = new TimerTask(){
         public void run(){
             secondsPassed++;
-
             Log.i(TAG, "Seconds passed: " + secondsPassed);
-//            setContentView(R.layout.activity_main);
-//            ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-//            if (i % 2 == 0)
-//                hour00.setVisibility(View.VISIBLE);
-//            else
-//                hour00.setVisibility(View.INVISIBLE);
-//            i++;
+            if (i % 2 == 0)
+                isVisible();
+            else
+                isInvisible();
+            i++;
         }
     };
+
+    public void start() {
+        Log.i(TAG, "PLEASE SAVE US FROM THIS PROGRAMMING NIGHTMARE!");
+        myTimer.scheduleAtFixedRate(task, 1000, 1000);
+    }
+
     //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
     @Override
@@ -52,13 +66,25 @@ public class MainActivity extends AppCompatActivity {
         test.start();
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-        hour00.setVisibility(View.VISIBLE);
+        setContentView(R.layout.activity_main);
 
         ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
         hour10.setVisibility(View.VISIBLE);
+
+        int j = 0;
+
+        while(j < 6)
+        {
+            try{
+                Thread.sleep(1000);
+            }catch(InterruptedException ie){}
+            if(j % 2 == 0)
+                hour10.setVisibility(View.VISIBLE);
+            else
+                hour10.setVisibility(View.GONE);
+            j++;
+        }
 
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
         //read system clock (hour + minutes) and print it in textview1
@@ -76,16 +102,6 @@ public class MainActivity extends AppCompatActivity {
         b2 = (Button) findViewById(R.id.btn2);
         b3 = (Button) findViewById(R.id.btn3);
     }
-
-    public void start() {
-        Log.i(TAG, "PLEASE SAVE US FROM THIS PROGRAMMING NIGHTMARE!");
-        myTimer.scheduleAtFixedRate(task, 1000, 1000);
-    }
-
-
-    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-
 
 
     public void convertTime(int hour1, int hour2, int minute1, int minute2) {
@@ -151,11 +167,13 @@ public class MainActivity extends AppCompatActivity {
         //System.out; needs to print to phone screen
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++)
-                System.out.print(matrix[i][j]);
-            System.out.println("");
-        }
+//        for (int i = 0; i < 4; i++) {
+//            for (int j = 0; j < 4; j++)
+//                System.out.print(matrix[i][j]);
+//            System.out.println("");
+//        }
+
+
     }
 
 
