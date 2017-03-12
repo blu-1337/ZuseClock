@@ -9,6 +9,7 @@ import android.view.View;
 import java.sql.Time;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.text.SimpleDateFormat;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -36,27 +37,67 @@ public class MainActivity extends AppCompatActivity {
         int current_minutes = Calendar.getInstance().get(Calendar.MINUTE);
 
         TextView current_time = (TextView) findViewById(R.id.textView1);
-        current_time.setText(hour1(current_hour) + "     " + hour2(current_hour) + "                        " + minute1(current_minutes) + "     " + minute2(current_minutes));
+        current_time.setText(" ");
+        current_time.setText(current_hour + " " + hour1(current_hour) + "     " + hour2(current_hour) + "                " + minute1(current_minutes) + "     " + minute2(current_minutes));
 
         TextView time_now = (TextView) findViewById(R.id.textView2);
         time_now.setText("hi");
 
     }
 
-    public int hour1(int current_hour) {
-        return (int) ((current_hour / Math.pow(10, 1)) % 10);
+    public int hour1(int x) {
+        int l = Integer.toString(x).length();
+        int[] array = new int[l];
+        for (int i = 0; i < l; i++) {
+            array[i] = x % 10;
+            x /= 10;
+        }
+        int digit = array[1];
+        return digit;
+        /*int digit, rn;
+        do{
+            digit = x % 10;
+            rn = x / 10;
+
+            *//*x /= 10;
+            int digit = x % 10;
+            return digit;*//*
+        } while(rn > 0);
+        return digit;*/
     }
 
-    public int hour2(int current_hour) {
-        return (int) ((current_hour / Math.pow(10, 2)) % 10);
+    public int hour2(int x) {
+        int l = Integer.toString(x).length();
+        int[] array = new int[l];
+        for (int i = 0; i < l; i++) {
+            array[i] = x % 10;
+            x /= 10;
+        }
+        int digit = array[0];
+        return digit;
+
     }
 
-    public int minute1(int current_minutes) {
-        return (int) ((current_minutes / Math.pow(10, 1)) % 10);
+    public int minute1(int y) {
+        int l = Integer.toString(y).length();
+        int[] array = new int[l];
+        for (int i = 0; i < l; i++) {
+            array[i] = y % 10;
+            y /= 10;
+        }
+        int digit = array[1];
+        return digit;
     }
 
-    public int minute2(int current_minutes) {
-        return (int) ((current_minutes / Math.pow(10, 2)) % 10);
+    public int minute2(int y) {
+        int l = Integer.toString(y).length();
+        int[] array = new int[l];
+        for (int i = 0; i < l; i++) {
+            array[i] = y % 10;
+            y /= 10;
+        }
+        int digit = array[0];
+        return digit;
     }
 
 
