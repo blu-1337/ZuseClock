@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Main Activity TAG: ";
 
-    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    /*//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     //Timer Function
     //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     int secondsPassed = 0;
@@ -31,17 +31,23 @@ public class MainActivity extends AppCompatActivity {
     Timer myTimer = new Timer();
     TimerTask task = new TimerTask(){
         public void run(){
+            //example timer (test)
             secondsPassed++;
-            //it goes wrong here ->>> setContentView(R.layout.activity_main);
             Log.i(TAG, "Seconds passed: " + secondsPassed);
-//            ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-//            if (i % 2 == 0)
-//                hour00.setVisibility(View.VISIBLE);
-//            else
-//                hour00.setVisibility(View.INVISIBLE);
             i++;
+            //end example timer (test)
+
+
+
+            setContentView(R.layout.activity_main); // <<<--it goes wrong here
+
+            ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+            if (i % 2 == 0)
+                hour00.setVisibility(View.VISIBLE);
+            else
+                hour00.setVisibility(View.INVISIBLE);
         }
-    };
+    };*/
     //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
     @Override
@@ -53,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-        hour00.setVisibility(View.VISIBLE);
+        /*ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+        hour00.setVisibility(View.VISIBLE);*/
 
         ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
         hour10.setVisibility(View.VISIBLE);
@@ -66,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         int current_minutes = Calendar.getInstance().get(Calendar.MINUTE);
 
         TextView current_time = (TextView) findViewById(R.id.textView1);
-        current_time.setText(hour1(current_hour) + "     " + hour2(current_hour) + "                " + minute1(current_minutes) + "     " + minute2(current_minutes));
+        current_time.setText(hour1(current_hour) + "     " + hour2(current_hour) + "          " + minute1(current_minutes) + "     " + minute2(current_minutes));
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
         convertTime(2, 0, 5, 3);
@@ -75,6 +81,33 @@ public class MainActivity extends AppCompatActivity {
         b2 = (Button) findViewById(R.id.btn2);
         b3 = (Button) findViewById(R.id.btn3);
     }
+
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    //Timer Function
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    int secondsPassed = 0;
+    int i = 0;
+
+    Timer myTimer = new Timer();
+    TimerTask task = new TimerTask(){
+        public void run(){
+            //example timer (test)
+            /*secondsPassed++;
+            Log.i(TAG, "Seconds passed: " + secondsPassed);
+            i++;*/
+            //end example timer (test)
+
+
+
+            /*setContentView(R.layout.activity_main); // <<<--it goes wrong here
+
+            ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+            if (i % 2 == 0)
+                hour00.setVisibility(View.VISIBLE);
+            else
+                hour00.setVisibility(View.INVISIBLE);*/
+        }
+    };
 
     public void start() {
         Log.i(TAG, "PLEASE SAVE US FROM THIS PROGRAMMING NIGHTMARE!");
@@ -150,11 +183,15 @@ public class MainActivity extends AppCompatActivity {
         //System.out; needs to print to phone screen
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
+        TextView outpt_binary = (TextView) findViewById(R.id.textView2);
+        String outpt_str = "";
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++)
-                System.out.print(matrix[i][j]);
-            System.out.println("");
+                outpt_str = outpt_str + " " + matrix[i][j];
+            outpt_str = outpt_str + "\r";
         }
+        outpt_binary.setText(outpt_str);
+
     }
 
 
