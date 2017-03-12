@@ -32,14 +32,15 @@ public class MainActivity extends AppCompatActivity {
     TimerTask task = new TimerTask(){
         public void run(){
             secondsPassed++;
-            //it goes wrong here ->>> setContentView(R.layout.activity_main);
+
             Log.i(TAG, "Seconds passed: " + secondsPassed);
+//            setContentView(R.layout.activity_main);
 //            ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
 //            if (i % 2 == 0)
 //                hour00.setVisibility(View.VISIBLE);
 //            else
 //                hour00.setVisibility(View.INVISIBLE);
-            i++;
+//            i++;
         }
     };
     //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
