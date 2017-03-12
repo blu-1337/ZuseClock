@@ -59,13 +59,15 @@ public class MainActivity extends AppCompatActivity {
         ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
         hour10.setVisibility(View.VISIBLE);
 
-        //######### test: read system time (hour + minutes)############
-        //Calendar calendar = calendar.getInstance();
-        int current_hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);//int current_hour = calendar.get(GregorianCalendar.HOUR_OF_DAY);
+        //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+        //read system clock (hour + minutes) and print it in textview1
+        //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+        int current_hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
         int current_minutes = Calendar.getInstance().get(Calendar.MINUTE);
 
         TextView current_time = (TextView) findViewById(R.id.textView1);
         current_time.setText(hour1(current_hour) + "     " + hour2(current_hour) + "                " + minute1(current_minutes) + "     " + minute2(current_minutes));
+        //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
         convertTime(2, 0, 5, 3);
 
@@ -224,6 +226,10 @@ public class MainActivity extends AppCompatActivity {
         b2.setVisibility(View.VISIBLE);
     }
     //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    //functions that split hours and minutes in single digits
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     public int hour1(int x) {
         int l = Integer.toString(x).length();
         int[] array = new int[l];
@@ -267,7 +273,8 @@ public class MainActivity extends AppCompatActivity {
         }
         int digit = array[0];
         return digit;
-}
+    }
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 }
 
 
