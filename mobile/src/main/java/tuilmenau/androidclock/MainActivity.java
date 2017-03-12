@@ -5,16 +5,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.view.View;
 
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.sql.Time;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 
 public class MainActivity extends AppCompatActivity {
 
 
+<<<<<<< HEAD
     private static final String TAG = "Main Activity TAG: ";
 
     //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -37,11 +42,14 @@ public class MainActivity extends AppCompatActivity {
             i++;
         }
     };
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
 
     public void start(){
         Log.i(TAG, "PLEASE SAVE US FROM THIS PROGRAMMING NIGHTMARE!");
         myTimer.scheduleAtFixedRate(task, 1000, 1000);
     }
+
 
     //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
@@ -70,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
         hour1 /= 2;
 
         matrix[0][0] = hour1 % 2;
-
 
         //second column
         matrix[3][1] = hour2 % 2;
@@ -107,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
         minute2 /= 2;
 
         matrix[0][3] = minute2 % 2;
-
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
         //This printout needs to be changed, it prints in
         //System.out; needs to print to phone screen
@@ -186,8 +192,11 @@ public class MainActivity extends AppCompatActivity {
 //
 //        }
 //    },0,2500);
+//     //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-    }
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    //buttons experiment
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
     public void b1Clicked(View v){
         b1.setVisibility(View.INVISIBLE);
@@ -204,8 +213,7 @@ public class MainActivity extends AppCompatActivity {
         b1.setVisibility(View.VISIBLE);
         b2.setVisibility(View.VISIBLE);
     }
-
-
+    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 }
 
