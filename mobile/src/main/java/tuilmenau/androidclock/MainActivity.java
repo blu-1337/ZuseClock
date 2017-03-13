@@ -44,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
         public void run(){
             secondsPassed++;
             Log.i(TAG, "Seconds passed: " + secondsPassed);
-            if (i % 2 == 0)
-                isVisible();
-            else
-                isInvisible();
-            i++;
+//            if (i % 2 == 0)
+//                isVisible();
+//            else
+//                isInvisible();
+//            i++;
         }
     };
 
