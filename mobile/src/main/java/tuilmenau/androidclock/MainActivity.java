@@ -1,6 +1,7 @@
 package tuilmenau.androidclock;
 
 import android.support.v7.app.AppCompatActivity;
+import android.os.*;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -18,8 +19,12 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
 
     //heavy clicking
-
+//    Handler handler = new Handler();
+//    ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+//    Runnable refresh;
     Button b1, b2, b3;
+
+    //protected int splashTime = 3000;
 
     private static final String TAG = "Main Activity TAG: ";
 
@@ -30,49 +35,91 @@ public class MainActivity extends AppCompatActivity {
     int i = 0;
 
     public void isVisible() {
-        setContentView(R.layout.activity_main);
-        ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-        hour00.setVisibility(View.VISIBLE);
+//        setContentView(R.layout.activity_main);
+//        ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+//        hour00.setVisibility(View.VISIBLE);
     }
     public void isInvisible(){
-        setContentView(R.layout.activity_main);
-        ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-        hour00.setVisibility(View.INVISIBLE);
+//        setContentView(R.layout.activity_main);
+//        ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+//        hour00.setVisibility(View.INVISIBLE);
     }
 
-    Timer myTimer = new Timer();
-    TimerTask task = new TimerTask(){
-        public void run(){
-            secondsPassed++;
-            Log.i(TAG, "Seconds passed: " + secondsPassed);
-//            if (i % 2 == 0)
-//                isVisible();
-//            else
-//                isInvisible();
-//            i++;
-        }
-    };
+    // timer try 1
 
-    public void start() {
-        Log.i(TAG, "PLEASE SAVE US FROM THIS PROGRAMMING NIGHTMARE!");
-        myTimer.scheduleAtFixedRate(task, 1000, 1000);
-    }
+//    Timer myTimer = new Timer();
+//    TimerTask task = new TimerTask(){
+//        public void run(){
+//            secondsPassed++;
+//            Log.i(TAG, "Seconds passed: " + secondsPassed);
+////            if (i % 2 == 0)
+////                isVisible();
+////            else
+////                isInvisible();
+////            i++;
+//        }
+//    };
+
+//    public void start() {
+//        Log.i(TAG, "PLEASE SAVE US FROM THIS PROGRAMMING NIGHTMARE!");
+//        myTimer.scheduleAtFixedRate(task, 1000, 1000);
+//    }
 
     //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         MainActivity test = new MainActivity();
-        test.start();
+//        test.start();
 
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-
         ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
         hour10.setVisibility(View.VISIBLE);
 
-        int j = 0;
+        // timer try 2
+        /*Thread th = new Thread(){
+
+            public void run() {
+                try {
+                    for (timer = 0; timer < 7; timer++) {
+                        int waited = 0;
+                        while (waited < splashTime) {
+                            Thread.sleep(100);
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    try {
+                                        hour00.setVisibility(View.VISIBLE);
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            });
+                            waited +=100;
+                        }
+                    }
+                } catch (InterruptedException e) {
+                }
+
+            }
+        };
+        th.start();*/
+
+        //timer try 3
+        /*final ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        hour00.setVisibility(View.INVISIBLE);
+                    }
+                },
+                5000
+        );*/
+
+        /*int j = 0;
 
         while(j < 6)
         {
@@ -84,7 +131,28 @@ public class MainActivity extends AppCompatActivity {
             else
                 hour10.setVisibility(View.GONE);
             j++;
-        }
+        }*/
+
+        //timer try 4
+
+
+
+//        refresh = new Runnable() {
+//            public void run() {
+//                setContentView(R.layout.activity_main);
+//                hour00.setVisibility(View.INVISIBLE);
+//                handler.postDelayed(refresh, 5000);
+//            }
+//        };
+//        handler.post(refresh);
+
+        //timer try 5
+        timerDelayRemoveView();
+
+
+
+
+
 
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
         //read system clock (hour + minutes) and print it in textview1
@@ -93,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
         int current_minutes = Calendar.getInstance().get(Calendar.MINUTE);
 
         TextView current_time = (TextView) findViewById(R.id.textView1);
-        current_time.setText(hour1(current_hour) + "     " + hour2(current_hour) + "                " + minute1(current_minutes) + "     " + minute2(current_minutes));
+        current_time.setText(hour1(current_hour) + "  " + hour2(current_hour) + "       " + minute1(current_minutes) + "  " + minute2(current_minutes));
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
         convertTime(2, 0, 5, 3);
@@ -102,6 +170,28 @@ public class MainActivity extends AppCompatActivity {
         b2 = (Button) findViewById(R.id.btn2);
         b3 = (Button) findViewById(R.id.btn3);
     }
+
+//    int j = 0;
+    public void timerDelayRemoveView() {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            int j = 0;
+            public void run() {
+                if (j == 1){
+                    //setContentView(R.layout.activity_main);
+                    ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+                    hour00.setVisibility(View.INVISIBLE);
+                } else {
+                    //setContentView(R.layout.activity_main);
+                    ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+                    hour00.setVisibility(View.VISIBLE);
+                }
+                j++;
+            }
+
+        }, 1000);
+    }
+
 
 
     public void convertTime(int hour1, int hour2, int minute1, int minute2) {
@@ -247,7 +337,7 @@ public class MainActivity extends AppCompatActivity {
     //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
     //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    //functions that split hours and minutes in single digits
+    //functions that split hours and minutes into single digits
     //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     public int hour1(int x) {
         int l = Integer.toString(x).length();
