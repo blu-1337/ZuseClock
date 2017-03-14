@@ -26,25 +26,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
+        ImageView hour10 = (ImageView) findViewById(R.id.imageView02);
         hour10.setVisibility(View.VISIBLE);
 
-        new Thread(new Runnable()
-        {
+        new Thread(new Runnable() {
 
             @Override
-            public void run()
-            {
+            public void run() {
                 while (!Thread.interrupted())
-                    try
-                    {
+                    try {
                         Thread.sleep(1000);
                         runOnUiThread(new Runnable() // start actions in UI thread
                         {
 
                             @Override
-                            public void run()
-                            {
+                            public void run() {
                                 ImageView hour00 = (ImageView) findViewById(R.id.imageView00);
                                 if (hour00.getVisibility() == View.VISIBLE)
                                     hour00.setVisibility(View.INVISIBLE);
@@ -53,9 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
                             }
                         });
-                    }
-                    catch (InterruptedException e)
-                    {
+                    } catch (InterruptedException e) {
                         // ooops
                     }
             }
@@ -65,11 +59,9 @@ public class MainActivity extends AppCompatActivity {
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
         //transparency test
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-        ImageView myImage = (ImageView) findViewById(R.id.imageView3);
+        ImageView myImage = (ImageView) findViewById(R.id.imageView2);
         myImage.setAlpha(50);
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-
 
 
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -82,8 +74,7 @@ public class MainActivity extends AppCompatActivity {
         current_time.setText(hour1(current_hour) + "  " + hour2(current_hour) + "       " + minute1(current_minutes) + "  " + minute2(current_minutes));
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-        convertTime(2, 0, 5, 3);
-
+        convertTime(hour1(current_hour), hour2(current_hour), minute1(current_minutes), minute2(current_minutes));
     }
 
     public void convertTime(int hour1, int hour2, int minute1, int minute2) {
@@ -146,16 +137,6 @@ public class MainActivity extends AppCompatActivity {
         minute2 /= 2;
 
         matrix[0][3] = minute2 % 2;
-        //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-        //This printout needs to be changed, it prints in
-        //System.out; needs to print to phone screen
-        //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-//        for (int i = 0; i < 4; i++) {
-//            for (int j = 0; j < 4; j++)
-//                System.out.print(matrix[i][j]);
-//            System.out.println("");
-//        }
 
         for(int i = 0; i < 4; i++)
             for(int j = 0; j< 4; j++){
