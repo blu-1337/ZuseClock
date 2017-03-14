@@ -22,6 +22,26 @@
         android:id="@+id/imageView4"
         android:layout_width="55dp"
         android:layout_height="55dp"
+        android:layout_marginLeft="71dp"
+        android:layout_marginTop="249dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:srcCompat="@android:color/holo_green_dark" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="313dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:srcCompat="@android:color/holo_green_dark" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="249dp"
         app:layout_constraintLeft_toLeftOf="@+id/guideline4"
@@ -32,14 +52,114 @@
         android:id="@+id/imageView5"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="315dp"
+        android:layout_marginLeft="71dp"
+        android:layout_marginTop="381dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:srcCompat="@android:color/holo_green_dark" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="71dp"
+        android:layout_marginTop="313dp"
         app:layout_constraintLeft_toLeftOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:srcCompat="@android:color/holo_green_dark" />
 
     <ImageView
         android:id="@+id/imageView"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="381dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:srcCompat="@android:color/holo_green_dark" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="313dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:srcCompat="@android:color/holo_green_dark" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="249dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:srcCompat="@android:color/holo_green_dark" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="223dp"
+        android:layout_marginTop="381dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:srcCompat="@android:color/holo_green_dark" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="223dp"
+        android:layout_marginTop="313dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:srcCompat="@android:color/holo_green_dark" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="223dp"
+        android:layout_marginTop="249dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:srcCompat="@android:color/holo_green_dark" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="223dp"
+        android:layout_marginTop="185dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:srcCompat="@android:color/holo_green_dark" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="185dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:srcCompat="@android:color/holo_green_dark" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="71dp"
+        android:layout_marginTop="185dp"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:srcCompat="@android:color/holo_green_dark" />
+
+    <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_marginLeft="0dp"
@@ -96,12 +216,19 @@
         android:orientation="vertical" />
 
     <android.support.constraint.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="45dp" />
+
+    <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/guideline4"
         app:layout_constraintGuide_begin="16dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteY="0dp"6
         tools:layout_editor_absoluteX="16dp" />
 
     <android.support.constraint.Guideline
