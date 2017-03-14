@@ -147,11 +147,40 @@ public class MainActivity extends AppCompatActivity {
 //        handler.post(refresh);
 
         //timer try 5
-        timerDelayRemoveView();
+            //timerDelayRemoveView();
+
+        //timer try 6
+        new Thread(new Runnable()
+        {
+
+            @Override
+            public void run()
+            {
+                while (!Thread.interrupted())
+                    try
+                    {
+                        Thread.sleep(1000);
+                        runOnUiThread(new Runnable() // start actions in UI thread
+                        {
+
+                            @Override
+                            public void run()
+                            {
+                                ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+                                if (hour00.getVisibility() == View.VISIBLE)
+                                    hour00.setVisibility(View.INVISIBLE);
+                                else hour00.setVisibility(View.VISIBLE);
 
 
-
-
+                            }
+                        });
+                    }
+                    catch (InterruptedException e)
+                    {
+                        // ooops
+                    }
+            }
+        }).start(); // the while thread will start in BG thread
 
 
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -171,26 +200,38 @@ public class MainActivity extends AppCompatActivity {
         b3 = (Button) findViewById(R.id.btn3);
     }
 
+
+    //-=-=-=-= timerDelayRemoveView sometimes successful as timer function
 //    int j = 0;
-    public void timerDelayRemoveView() {
+/*    public void timerDelayRemoveView() {
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             int j = 0;
             public void run() {
-                if (j == 1){
-                    //setContentView(R.layout.activity_main);
-                    ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-                    hour00.setVisibility(View.INVISIBLE);
-                } else {
-                    //setContentView(R.layout.activity_main);
-                    ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-                    hour00.setVisibility(View.VISIBLE);
+                //if (j == 1){
+                //setContentView(R.layout.activity_main);
+//                    ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+//                    hour00.setVisibility(View.INVISIBLE);
+                *//*} else {
+                    //setContentView(R.layout.activity_main);*//*
+                ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+                hour00.setVisibility(View.VISIBLE);
+//            }
+//                j++;
+
+                switch (j) {
+                    case 0:
+                        hour00.setVisibility(View.VISIBLE);
+                        j = 1;
+                    case 1:
+                        hour00.setVisibility(View.INVISIBLE);
+                        j = 0;
                 }
-                j++;
             }
 
         }, 1000);
-    }
+
+    }*/
 
 
 
