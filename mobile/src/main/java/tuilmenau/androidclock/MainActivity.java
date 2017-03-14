@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void run()
                             {
-                                ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
+                                ImageView hour00 = (ImageView) findViewById(R.id.imageView00);
                                 if (hour00.getVisibility() == View.VISIBLE)
                                     hour00.setVisibility(View.INVISIBLE);
                                 else hour00.setVisibility(View.VISIBLE);
