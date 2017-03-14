@@ -41,14 +41,16 @@ public class MainActivity extends AppCompatActivity {
 
                             @Override
                             public void run() {
-                                ImageView hour00 = (ImageView) findViewById(R.id.imageView00);
-                                if (hour00.getVisibility() == View.VISIBLE)
-                                    hour00.setVisibility(View.INVISIBLE);
-                                else hour00.setVisibility(View.VISIBLE);
+//                                ImageView hour00 = (ImageView) findViewById(R.id.imageView00);
+//                                if (hour00.getVisibility() == View.VISIBLE)
+//                                    hour00.setVisibility(View.INVISIBLE);
+//                                else hour00.setVisibility(View.VISIBLE);
 
-//                                int current_hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-//                                int current_minutes = Calendar.getInstance().get(Calendar.MINUTE);
-//                                convertTime(hour1(current_hour), hour2(current_hour), minute1(current_minutes), minute2(current_minutes));
+                                int current_hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+                                int current_minutes = Calendar.getInstance().get(Calendar.MINUTE);
+                                convertTime(hour1(current_hour), hour2(current_hour), minute1(current_minutes), minute2(current_minutes));
+                                TextView current_time = (TextView) findViewById(R.id.textView1);
+                                current_time.setText(hour1(current_hour) + "  " + hour2(current_hour) + "       " + minute1(current_minutes) + "  " + minute2(current_minutes));
                             }
                         });
                     } catch (InterruptedException e) {
@@ -74,10 +76,12 @@ public class MainActivity extends AppCompatActivity {
 //
 //        TextView current_time = (TextView) findViewById(R.id.textView1);
 //        current_time.setText(hour1(current_hour) + "  " + hour2(current_hour) + "       " + minute1(current_minutes) + "  " + minute2(current_minutes));
+//        current_time.setText(current_hour + " : " + current_minutes);
+
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-        //convertTime(hour1(current_hour), hour2(current_hour), minute1(current_minutes), minute2(current_minutes));
-        convertTime(0,0,1,7);
+//        convertTime(hour1(current_hour), hour2(current_hour), minute1(current_minutes), minute2(current_minutes));
+//        convertTime(0,0,1,7);
     }
 
     public void convertTime(int hour1, int hour2, int minute1, int minute2) {
@@ -164,10 +168,13 @@ public class MainActivity extends AppCompatActivity {
     public int hour1(int x) {
         int l = Integer.toString(x).length();
         int[] array = new int[l];
-        for (int i = 0; i < l; i++) {
+        if(l<2)
+            return 0;
+        else
+            for (int i = 0; i < l; i++) {
             array[i] = x % 10;
             x /= 10;
-        }
+            }
         int digit = array[1];
         return digit;
     }
