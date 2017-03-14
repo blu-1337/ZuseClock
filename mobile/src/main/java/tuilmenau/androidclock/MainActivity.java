@@ -18,138 +18,17 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
-    //heavy clicking
-//    Handler handler = new Handler();
-//    ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-//    Runnable refresh;
-    Button b1, b2, b3;
-
-    //protected int splashTime = 3000;
-
     private static final String TAG = "Main Activity TAG: ";
 
-    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    //Timer Function
-    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    int secondsPassed = 0;
-    int i = 0;
-
-    public void isVisible() {
-//        setContentView(R.layout.activity_main);
-//        ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-//        hour00.setVisibility(View.VISIBLE);
-    }
-    public void isInvisible(){
-//        setContentView(R.layout.activity_main);
-//        ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-//        hour00.setVisibility(View.INVISIBLE);
-    }
-
-    // timer try 1
-
-//    Timer myTimer = new Timer();
-//    TimerTask task = new TimerTask(){
-//        public void run(){
-//            secondsPassed++;
-//            Log.i(TAG, "Seconds passed: " + secondsPassed);
-////            if (i % 2 == 0)
-////                isVisible();
-////            else
-////                isInvisible();
-////            i++;
-//        }
-//    };
-
-//    public void start() {
-//        Log.i(TAG, "PLEASE SAVE US FROM THIS PROGRAMMING NIGHTMARE!");
-//        myTimer.scheduleAtFixedRate(task, 1000, 1000);
-//    }
-
-    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        MainActivity test = new MainActivity();
-//        test.start();
-
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
         ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
         hour10.setVisibility(View.VISIBLE);
 
-        // timer try 2
-        /*Thread th = new Thread(){
-
-            public void run() {
-                try {
-                    for (timer = 0; timer < 7; timer++) {
-                        int waited = 0;
-                        while (waited < splashTime) {
-                            Thread.sleep(100);
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    try {
-                                        hour00.setVisibility(View.VISIBLE);
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-                            });
-                            waited +=100;
-                        }
-                    }
-                } catch (InterruptedException e) {
-                }
-
-            }
-        };
-        th.start();*/
-
-        //timer try 3
-        /*final ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-        new java.util.Timer().schedule(
-                new java.util.TimerTask() {
-                    @Override
-                    public void run() {
-                        hour00.setVisibility(View.INVISIBLE);
-                    }
-                },
-                5000
-        );*/
-
-        /*int j = 0;
-
-        while(j < 6)
-        {
-            try{
-                Thread.sleep(1000);
-            }catch(InterruptedException ie){}
-            if(j % 2 == 0)
-                hour10.setVisibility(View.VISIBLE);
-            else
-                hour10.setVisibility(View.GONE);
-            j++;
-        }*/
-
-        //timer try 4
-
-
-
-//        refresh = new Runnable() {
-//            public void run() {
-//                setContentView(R.layout.activity_main);
-//                hour00.setVisibility(View.INVISIBLE);
-//                handler.postDelayed(refresh, 5000);
-//            }
-//        };
-//        handler.post(refresh);
-
-        //timer try 5
-            //timerDelayRemoveView();
-
-        //timer try 6
         new Thread(new Runnable()
         {
 
@@ -195,45 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         convertTime(2, 0, 5, 3);
 
-        b1 = (Button) findViewById(R.id.btn1);
-        b2 = (Button) findViewById(R.id.btn2);
-        b3 = (Button) findViewById(R.id.btn3);
     }
-
-
-    //-=-=-=-= timerDelayRemoveView sometimes successful as timer function
-//    int j = 0;
-/*    public void timerDelayRemoveView() {
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            int j = 0;
-            public void run() {
-                //if (j == 1){
-                //setContentView(R.layout.activity_main);
-//                    ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-//                    hour00.setVisibility(View.INVISIBLE);
-                *//*} else {
-                    //setContentView(R.layout.activity_main);*//*
-                ImageView hour00 = (ImageView) findViewById(R.id.imageView1);
-                hour00.setVisibility(View.VISIBLE);
-//            }
-//                j++;
-
-                switch (j) {
-                    case 0:
-                        hour00.setVisibility(View.VISIBLE);
-                        j = 1;
-                    case 1:
-                        hour00.setVisibility(View.INVISIBLE);
-                        j = 0;
-                }
-            }
-
-        }, 1000);
-
-    }*/
-
-
 
     public void convertTime(int hour1, int hour2, int minute1, int minute2) {
 
@@ -306,76 +147,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
-
-
-//
-//        //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-//        //Here i tried to make a timer
-//        //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-//
-//        Timer timer = new Timer();
-//
-//        timer.schedule(new TimerTask(){
-//            public int i = 0;
-//            public ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
-//
-//            public void run(){
-//                if (i % 2 == 0){
-//                    setContentView(R.layout.activity_main);
-//                    ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
-//                    hour10.setVisibility(View.VISIBLE);
-//                } else {
-//
-//                    ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
-//                    hour10.setVisibility(View.GONE);
-//                }
-//                this.i++;
-//            }
-//        }, 0,2000);
-
-
-//        Timer timer2 = new Timer();
-//        timer2.schedule(new TimerTask(){
-//            public void run(){
-//                ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
-//                hour10.setVisibility(View.INVISIBLE);
-//            }
-//        }, 0,1000);
-
-
-//        new Timer().scheduleAtFixedRate(new TimerTask() {
-//            @Override
-//            public void run () {
-//                Log.i("tag", "A kiss every 5 seconds");
-//                ImageView hour10 = (ImageView) findViewById(R.id.imageView2);
-//                hour10.setVisibility(View.INVISIBLE);
-//
-//        }
-//    },0,2500);
-//     //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    //buttons experiment
-    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
-    public void b1Clicked(View v){
-        b1.setVisibility(View.INVISIBLE);
-        b2.setVisibility(View.VISIBLE);
-        b3.setVisibility(View.VISIBLE);
-    }
-    public void b2Clicked(View v){
-        b2.setVisibility(View.INVISIBLE);
-        b1.setVisibility(View.VISIBLE);
-        b3.setVisibility(View.VISIBLE);
-    }
-    public void b3Clicked(View v){
-        b3.setVisibility(View.INVISIBLE);
-        b1.setVisibility(View.VISIBLE);
-        b2.setVisibility(View.VISIBLE);
-    }
-    //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
     //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     //functions that split hours and minutes into single digits
