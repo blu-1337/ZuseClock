@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        ImageView hour10 = (ImageView) findViewById(R.id.imageView02);
-        hour10.setVisibility(View.VISIBLE);
+//        ImageView hour10 = (ImageView) findViewById(R.id.imageView02);
+//        hour10.setVisibility(View.VISIBLE);
 
         new Thread(new Runnable() {
 
@@ -46,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
                                     hour00.setVisibility(View.INVISIBLE);
                                 else hour00.setVisibility(View.VISIBLE);
 
-
+//                                int current_hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+//                                int current_minutes = Calendar.getInstance().get(Calendar.MINUTE);
+//                                convertTime(hour1(current_hour), hour2(current_hour), minute1(current_minutes), minute2(current_minutes));
                             }
                         });
                     } catch (InterruptedException e) {
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
         //transparency test
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-        ImageView myImage = (ImageView) findViewById(R.id.imageView2);
+        ImageView myImage = (ImageView) findViewById(R.id.imageView_google);
         myImage.setAlpha(50);
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
@@ -69,12 +71,13 @@ public class MainActivity extends AppCompatActivity {
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
         int current_hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
         int current_minutes = Calendar.getInstance().get(Calendar.MINUTE);
-
-        TextView current_time = (TextView) findViewById(R.id.textView1);
-        current_time.setText(hour1(current_hour) + "  " + hour2(current_hour) + "       " + minute1(current_minutes) + "  " + minute2(current_minutes));
+//
+//        TextView current_time = (TextView) findViewById(R.id.textView1);
+//        current_time.setText(hour1(current_hour) + "  " + hour2(current_hour) + "       " + minute1(current_minutes) + "  " + minute2(current_minutes));
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-        convertTime(hour1(current_hour), hour2(current_hour), minute1(current_minutes), minute2(current_minutes));
+        //convertTime(hour1(current_hour), hour2(current_hour), minute1(current_minutes), minute2(current_minutes));
+        convertTime(0,0,1,7);
     }
 
     public void convertTime(int hour1, int hour2, int minute1, int minute2) {
@@ -83,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
         //This function converts pasted in time in a binary
         //matrix; matrix to be read from bottom up
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
 
 
         int[][] matrix = new int[4][4];
@@ -138,20 +140,20 @@ public class MainActivity extends AppCompatActivity {
 
         matrix[0][3] = minute2 % 2;
 
-        for(int i = 0; i < 4; i++)
-            for(int j = 0; j< 4; j++){
+        for (int i = 0; i < 4; i++)
+            for (int j = 0; j < 4; j++) {
                 String imageID = "imageView" + i + j;
                 int resourceID = getResources().getIdentifier(imageID, "id", getPackageName());
                 ImageView myImage = (ImageView) findViewById(resourceID);
-                if(matrix[i][j] == 0){
+                if (matrix[i][j] == 0) {
                     myImage.setAlpha(50);
                 } else {
                     myImage.setAlpha(255);
                 }
 
 
-
             }
+
 
 
     }

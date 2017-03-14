@@ -169,14 +169,14 @@
         android:layout_marginTop="201dp" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView_google"
 
         android:layout_width="55dp"
         android:layout_height="52dp"
-        android:visibility="visible"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_light_focused"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="16dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_light_focused"
         tools:layout_editor_absoluteX="160dp" /><![CDATA[
 
     android:layout_width="55dp"
