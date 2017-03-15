@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                                 convertTime(hour1(current_hour), hour2(current_hour), minute1(current_minutes), minute2(current_minutes));
                                 TextView current_time = (TextView) findViewById(R.id.textView1);
                                 current_time.setText(hour1(current_hour) + "  " + hour2(current_hour) + "       " + minute1(current_minutes) + "  " + minute2(current_minutes));
+//                                current_time.setText(current_hour + "  " + current_minutes);
                             }
                         });
                     } catch (InterruptedException e) {
@@ -194,10 +195,13 @@ public class MainActivity extends AppCompatActivity {
     public int minute1(int y) {
         int l = Integer.toString(y).length();
         int[] array = new int[l];
-        for (int i = 0; i < l; i++) {
-            array[i] = y % 10;
-            y /= 10;
-        }
+        if(l<2)
+            return 0;
+        else
+            for (int i = 0; i < l; i++) {
+                array[i] = y % 10;
+                y /= 10;
+            }
         int digit = array[1];
         return digit;
     }
