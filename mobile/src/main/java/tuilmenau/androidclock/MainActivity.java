@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
                                 int current_hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
                                 int current_minutes = Calendar.getInstance().get(Calendar.MINUTE);
                                 convertTime(hour1(current_hour), hour2(current_hour), minute1(current_minutes), minute2(current_minutes));
-                                TextView current_time = (TextView) findViewById(R.id.textView1);
-                                current_time.setText(hour1(current_hour) + "  " + hour2(current_hour) + "       " + minute1(current_minutes) + "  " + minute2(current_minutes));
+//                                TextView current_time = (TextView) findViewById(R.id.textView1);
+//                                current_time.setText(hour1(current_hour) + "  " + hour2(current_hour) + "       " + minute1(current_minutes) + "  " + minute2(current_minutes));
 //                                current_time.setText(current_hour + "  " + current_minutes);
                             }
                         });
@@ -64,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
         //transparency test
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-        ImageView myImage = (ImageView) findViewById(R.id.imageView_google);
-        myImage.setAlpha(50);
+//        ImageView myImage = (ImageView) findViewById(R.id.imageView_google);
+//        myImage.setAlpha(50);
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 
