@@ -61,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         }).start(); // the while thread will start in BG thread
 
 
+
+
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
         //transparency test
         //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
