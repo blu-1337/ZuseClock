@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.catinean.simpleandroidwatchface">
+    package="de.tu-ilmenau.simpleandroidwatchface">
 
     <uses-feature android:name="android.hardware.type.watch" />
 
@@ -13,7 +13,7 @@
         android:theme="@android:style/Theme.DeviceDefault">
 
         <service
-            android:name="tuilmenau.androidclock.WatchFaceService"
+            android:name="tuilmenau.androidclock.SimpleWatchFaceService"
             android:label="@string/app_name"
             android:permission="android.permission.BIND_WALLPAPER">
             <meta-data
