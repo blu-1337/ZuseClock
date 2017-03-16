@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidClock</string>
+    <string name="app_name">ZuseClock</string>
     <string name="message">Watch face tapped</string>
-    <string name="my_analog_name">My Analog</string>
+    <string name="my_analog_name">ZuseClock</string>
 </resources>
